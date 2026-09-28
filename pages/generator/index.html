@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palette Generator | Color Lab</title>
+  <link rel="stylesheet" href="../../shared/css/global.css">
+  <link rel="stylesheet" href="./generator.css">
+</head>
+<body data-root="../../" data-page="generator">
+
+  <header class="site-top" id="site-header"></header>
+
+  <!-- Toolbar -->
+  <div class="gen-toolbar">
+    <p class="gen-hint"><kbd>Space</kbd> makes a new palette. Lock the colors you want to keep.</p>
+    <div class="gen-controls">
+      <label class="gen-select-label" for="harmony-select">Harmony</label>
+      <select class="select-input gen-select" id="harmony-select">
+        <option value="surprise">Surprise me</option>
+        <option value="random">Totally random</option>
+        <option value="analogous">Analogous</option>
+        <option value="monochromatic">Monochromatic</option>
+        <option value="complementary">Complementary</option>
+        <option value="split">Split Complementary</option>
+        <option value="triadic">Triadic</option>
+        <option value="square">Square</option>
+      </select>
+      <button class="button gen-button" id="generate-button" type="button">Generate</button>
+      <button class="button button-light gen-button" id="undo-button" type="button" title="Undo (Ctrl + Z)">Undo</button>
+      <button class="button button-light gen-button" id="add-button" type="button" title="Add a color">+ Color</button>
+      <a class="button button-light gen-button" href="../visualizer/">Try it on a site</a>
+    </div>
+  </div>
+
+  <!-- Color Columns -->
+  <main class="gen-colors" id="gen-colors" aria-label="Palette"></main>
+  <p class="gen-harmony-note" id="harmony-note" aria-live="polite"></p>
+
+  <script src="../../shared/js/color.js"></script>
+  <script src="../../shared/js/palette.js"></script>
+  <script src="../../shared/js/navbar.js"></script>
+  <script src="./generator.js"></script>
+</body>
+</html>

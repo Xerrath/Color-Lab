@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Wheel | Color Lab</title>
+  <link rel="stylesheet" href="../../shared/css/global.css">
+  <link rel="stylesheet" href="./wheel.css">
+</head>
+<body data-root="../../" data-page="wheel">
+
+  <header class="site-top" id="site-header"></header>
+
+  <main class="page">
+
+    <div class="page-head">
+      <p class="kicker">Color Harmonies</p>
+      <h1 class="page-title">Color Wheel</h1>
+      <p class="page-intro">Drag the big handle around the wheel. The other handles follow a rule, and that rule is the harmony. Look at the shape the lines make.</p>
+    </div>
+
+    <div class="wheel-layout">
+
+      <!-- Wheel -->
+      <section class="card wheel-card" aria-label="Color wheel">
+        <div class="wheel-stage" id="wheel-stage">
+          <canvas class="wheel-canvas" id="wheel-canvas" width="440" height="440"></canvas>
+          <svg class="wheel-lines" id="wheel-lines" viewBox="0 0 440 440" aria-hidden="true"></svg>
+          <div class="wheel-handles" id="wheel-handles"></div>
+        </div>
+        <div class="wheel-slider">
+          <label class="field-label" for="lightness-slider">Lightness: <span id="lightness-value">50</span>%</label>
+          <input class="range-input" id="lightness-slider" type="range" min="10" max="90" value="50">
+        </div>
+        <p class="wheel-note">Around the circle = <strong>hue</strong>. Center to edge = <strong>saturation</strong> (gray in the middle, bold at the edge).</p>
+      </section>
+
+      <!-- Harmony Controls -->
+      <section class="wheel-side">
+        <div class="card">
+          <p class="field-label">Harmony</p>
+          <div class="harmony-buttons" id="harmony-buttons" role="group" aria-label="Pick a harmony"></div>
+          <h2 class="card-title harmony-name" id="harmony-name"></h2>
+          <p class="card-text" id="harmony-about"></p>
+          <div class="swatch-row harmony-swatches" id="harmony-swatches"></div>
+          <p class="wheel-tip">Click a color to copy it.</p>
+        </div>
+
+        <div class="card">
+          <label class="field-label" for="base-hex">Base color</label>
+          <div class="color-field">
+            <input class="text-input hex-input" id="base-hex" type="text" maxlength="7" spellcheck="false">
+            <input id="base-picker" type="color" aria-label="Pick a base color">
+          </div>
+          <div class="wheel-actions">
+            <button class="button" id="use-palette" type="button">Use as my palette</button>
+            <a class="button button-light" id="inspect-link" href="#">Inspect base color</a>
+          </div>
+        </div>
+
+        <p class="wheel-footnote">This is a <strong>screen</strong> color wheel (red, green, blue light). Painters use a red, yellow, blue wheel. See <a href="../basics/">Color Basics</a> for the difference.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="../../shared/js/color.js"></script>
+  <script src="../../shared/js/palette.js"></script>
+  <script src="../../shared/js/navbar.js"></script>
+  <script src="./wheel.js"></script>
+</body>
+</html>

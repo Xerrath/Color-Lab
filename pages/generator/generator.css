@@ -1,0 +1,222 @@
+/* Palette Generator: full-height color columns, like Coolors */
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--surface);
+}
+
+.gen-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+  padding: 0.6rem 1.5rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.gen-hint {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.gen-hint kbd {
+  padding: 0.1rem 0.45rem;
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  background: var(--page-bg);
+  border: 1px solid var(--line);
+  border-bottom-width: 3px;
+  border-radius: 0.35rem;
+}
+
+.gen-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gen-select-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.gen-select {
+  width: auto;
+  padding: 0.45rem 0.6rem;
+}
+
+.gen-button {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.92rem;
+}
+
+/* Columns */
+.gen-colors {
+  display: flex;
+  flex: 1;
+  min-height: 26rem;
+}
+
+.gen-color {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.2rem;
+  min-width: 0;
+  padding: 1.5rem 0.5rem 3rem;
+  transition: background-color 0.25s ease;
+}
+
+.gen-tools {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.gen-color:hover .gen-tools,
+.gen-color:focus-within .gen-tools {
+  opacity: 1;
+}
+
+.gen-tool {
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.gen-tool:hover {
+  background: rgba(127, 127, 127, 0.22);
+}
+
+.gen-tool svg {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+/* A locked color always shows its lock */
+.gen-tool.is-locked {
+  opacity: 1;
+}
+
+.gen-color.is-locked .gen-tools .lock-tool {
+  background: rgba(127, 127, 127, 0.22);
+}
+
+.gen-lock-badge {
+  position: absolute;
+  top: 1rem;
+  display: none;
+}
+
+.gen-lock-badge svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.gen-color.is-locked .gen-lock-badge {
+  display: block;
+}
+
+.gen-hex {
+  padding: 0.2rem 0.5rem;
+  font-family: var(--font-ui);
+  font-size: clamp(1.3rem, 2.4vw, 2rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.gen-hex:hover {
+  background: rgba(127, 127, 127, 0.22);
+}
+
+.gen-name {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.gen-harmony-note {
+  min-height: 1.5rem;
+  margin: 0;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+}
+
+/* Phone: colors become rows and the tools are always visible */
+@media (max-width: 767px) {
+  .gen-toolbar {
+    padding: 0.6rem 1rem;
+  }
+
+  .gen-colors {
+    flex-direction: column;
+  }
+
+  .gen-color {
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 5.5rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .gen-tools {
+    order: 2;
+    flex-direction: row;
+    margin: 0;
+    opacity: 1;
+  }
+
+  .gen-tool {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .gen-text {
+    order: 1;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .gen-lock-badge {
+    display: none !important;
+  }
+
+  .gen-name {
+    text-align: left;
+  }
+}
+
+.gen-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

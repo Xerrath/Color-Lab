@@ -1,0 +1,161 @@
+/* Contrast Checker page */
+
+.contrast-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 22rem) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.contrast-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.swap-button {
+  align-self: center;
+}
+
+.palette-picks {
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--line);
+}
+
+.palette-picks .field-label {
+  margin-top: 0.5rem;
+}
+
+.pick-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.pick-swatch {
+  width: 2.1rem;
+  height: 2.1rem;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.pick-swatch:hover {
+  transform: scale(1.1);
+}
+
+.contrast-result {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contrast-preview {
+  padding: 2.2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.preview-kicker {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.preview-heading {
+  margin: 0.3rem 0 0.6rem;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.preview-text {
+  max-width: 55ch;
+  margin: 0 0 1.2rem;
+  font-size: 1rem;
+}
+
+.preview-button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+}
+
+.ratio-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 1rem;
+}
+
+.ratio-number {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.ratio-word {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.grade-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin: 0.8rem 0 1rem;
+}
+
+.grade {
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--radius-small);
+}
+
+.grade-pass {
+  color: #0f5132;
+  background: #d1f2df;
+}
+
+.grade-fail {
+  color: #842029;
+  background: #f8d7da;
+}
+
+.grade-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.grade-result {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.fix-note {
+  min-height: 1.3rem;
+  margin: 0.6rem 0 0;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+.rule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 0.9rem;
+}
+
+@media (max-width: 899px) {
+  .contrast-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

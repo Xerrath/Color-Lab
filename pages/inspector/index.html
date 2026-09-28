@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Inspector | Color Lab</title>
+  <link rel="stylesheet" href="../../shared/css/global.css">
+  <link rel="stylesheet" href="./inspector.css">
+</head>
+<body data-root="../../" data-page="inspector">
+
+  <header class="site-top" id="site-header"></header>
+
+  <main class="page">
+
+    <!-- Pick a Color -->
+    <section class="inspect-hero" id="inspect-hero">
+      <div class="inspect-hero-text">
+        <p class="inspect-temp" id="inspect-temp"></p>
+        <h1 class="inspect-hex" id="inspect-hex"></h1>
+        <p class="inspect-name" id="inspect-name"></p>
+      </div>
+      <div class="inspect-picker">
+        <label class="field-label inspect-label" for="color-input">Type a hex code or pick a color</label>
+        <div class="color-field">
+          <input class="text-input hex-input" id="color-input" type="text" maxlength="7" spellcheck="false">
+          <input id="color-picker" type="color" aria-label="Pick a color">
+        </div>
+        <button class="button inspect-add" id="add-to-palette" type="button">Add to my palette</button>
+      </div>
+    </section>
+
+    <!-- Conversions -->
+    <section class="section">
+      <h2 class="section-title">One Color, Many Codes</h2>
+      <p class="section-text">These all describe the exact same color, and CSS understands every one of them. Click any code to copy it.</p>
+      <div class="code-grid" id="code-grid"></div>
+    </section>
+
+    <!-- Variations -->
+    <section class="section">
+      <h2 class="section-title">Variations</h2>
+      <p class="section-text">Change one thing about the color and you get a whole family. Click a color to copy it.</p>
+      <div class="variation-list" id="variation-list"></div>
+    </section>
+
+    <!-- Harmonies -->
+    <section class="section">
+      <h2 class="section-title">Color Harmonies</h2>
+      <p class="section-text">Colors that go well with this one, based on where they sit on the <a href="../wheel/">color wheel</a>.</p>
+      <div class="harmony-grid" id="harmony-grid"></div>
+    </section>
+
+    <!-- Color Blindness -->
+    <section class="section">
+      <h2 class="section-title">Color Blindness Simulator</h2>
+      <p class="section-text">About 1 in 12 boys and 1 in 200 girls see color differently. Top swatch: this color. Bottom row: your saved palette. Would they still be able to tell your colors apart?</p>
+      <div class="vision-grid" id="vision-grid"></div>
+    </section>
+
+    <!-- Contrast -->
+    <section class="section">
+      <h2 class="section-title">Can You Read Text On It?</h2>
+      <p class="section-text">Contrast is how different two colors are in lightness. Text needs a ratio of at least <strong>4.5 : 1</strong> to pass. Open the <a href="../contrast/">Contrast Checker</a> for more.</p>
+      <div class="contrast-pair" id="contrast-pair"></div>
+    </section>
+
+  </main>
+
+  <script src="../../shared/js/color.js"></script>
+  <script src="../../shared/js/palette.js"></script>
+  <script src="../../shared/js/navbar.js"></script>
+  <script src="./inspector.js"></script>
+</body>
+</html>

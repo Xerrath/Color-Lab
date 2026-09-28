@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palette Visualizer | Color Lab</title>
+  <link rel="stylesheet" href="../../shared/css/global.css">
+  <link rel="stylesheet" href="./visualizer.css">
+</head>
+<body data-root="../../" data-page="visualizer">
+
+  <header class="site-top" id="site-header"></header>
+
+  <main class="page">
+
+    <div class="page-head">
+      <p class="kicker">The 60-30-10 Rule</p>
+      <h1 class="page-title">Palette Visualizer</h1>
+      <p class="page-intro">Designers don't use every color equally. Use your <strong>main</strong> color for about 60% of the page, a <strong>secondary</strong> color for 30%, and an <strong>accent</strong> for the 10% you want people to notice, like buttons.</p>
+    </div>
+
+    <div class="vis-layout">
+
+      <!-- Roles -->
+      <section class="card vis-controls">
+        <p class="field-label">My palette</p>
+        <div class="swatch-row vis-palette" id="vis-palette"></div>
+        <p class="vis-small">Want different colors? Make a palette in the <a href="../generator/">Generator</a>.</p>
+
+        <div class="role-field">
+          <label class="field-label" for="role-main">Main color (60%)</label>
+          <select class="select-input" id="role-main"></select>
+          <p class="vis-small">The page background.</p>
+        </div>
+        <div class="role-field">
+          <label class="field-label" for="role-secondary">Secondary color (30%)</label>
+          <select class="select-input" id="role-secondary"></select>
+          <p class="vis-small">Header, cards, and footer.</p>
+        </div>
+        <div class="role-field">
+          <label class="field-label" for="role-accent">Accent color (10%)</label>
+          <select class="select-input" id="role-accent"></select>
+          <p class="vis-small">Buttons, links, and highlights.</p>
+        </div>
+
+        <div class="vis-actions">
+          <button class="button" id="auto-button" type="button">Auto pick</button>
+          <button class="button button-light" id="shuffle-button" type="button">Shuffle</button>
+        </div>
+
+        <p class="field-label vis-split-label">How much of each</p>
+        <div class="split-bar" id="split-bar"></div>
+        <p class="vis-warning" id="vis-warning" aria-live="polite"></p>
+      </section>
+
+      <!-- Mock Website -->
+      <section class="mock" id="mock" aria-label="Example website using your palette">
+        <header class="mock-header">
+          <span class="mock-logo">Trailhead</span>
+          <nav class="mock-nav" aria-label="Example">
+            <span>Trails</span>
+            <span>Gear</span>
+            <span>About</span>
+          </nav>
+          <span class="mock-button mock-button-small">Join</span>
+        </header>
+
+        <div class="mock-hero">
+          <p class="mock-tag">New this week</p>
+          <h2 class="mock-title">Find your next <span class="mock-highlight">adventure</span></h2>
+          <p class="mock-text">Maps, gear lists, and tips for hiking the trails near you. Pick a trail, pack your bag, and get outside.</p>
+          <div class="mock-hero-buttons">
+            <span class="mock-button">Explore trails</span>
+            <span class="mock-link">Read the guide</span>
+          </div>
+        </div>
+
+        <div class="mock-cards">
+          <article class="mock-card">
+            <span class="mock-icon" aria-hidden="true"></span>
+            <h3 class="mock-card-title">Easy Loops</h3>
+            <p class="mock-card-text">Short, flat trails that are great for beginners.</p>
+          </article>
+          <article class="mock-card">
+            <span class="mock-icon" aria-hidden="true"></span>
+            <h3 class="mock-card-title">Big Views</h3>
+            <p class="mock-card-text">Climb a little higher for the best lookouts.</p>
+          </article>
+          <article class="mock-card">
+            <span class="mock-icon" aria-hidden="true"></span>
+            <h3 class="mock-card-title">Night Hikes</h3>
+            <p class="mock-card-text">Stargazing trails with guides and headlamps.</p>
+          </article>
+        </div>
+
+        <footer class="mock-footer">
+          <span>Trailhead, a pretend site for class</span>
+          <span class="mock-link">Contact us</span>
+        </footer>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="../../shared/js/color.js"></script>
+  <script src="../../shared/js/palette.js"></script>
+  <script src="../../shared/js/navbar.js"></script>
+  <script src="./visualizer.js"></script>
+</body>
+</html>

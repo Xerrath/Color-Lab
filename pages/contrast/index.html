@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contrast Checker | Color Lab</title>
+  <link rel="stylesheet" href="../../shared/css/global.css">
+  <link rel="stylesheet" href="./contrast.css">
+</head>
+<body data-root="../../" data-page="contrast">
+
+  <header class="site-top" id="site-header"></header>
+
+  <main class="page">
+
+    <div class="page-head">
+      <p class="kicker">Accessibility</p>
+      <h1 class="page-title">Contrast Checker</h1>
+      <p class="page-intro">Pretty colors don't matter if nobody can read the words. Contrast compares how light or dark two colors are, from 1 : 1 (the same) to 21 : 1 (black on white).</p>
+    </div>
+
+    <div class="contrast-layout">
+
+      <!-- Controls -->
+      <section class="card contrast-controls">
+        <div class="contrast-field">
+          <label class="field-label" for="text-hex">Text color</label>
+          <div class="color-field">
+            <input class="text-input hex-input" id="text-hex" type="text" maxlength="7" spellcheck="false">
+            <input id="text-picker" type="color" aria-label="Pick the text color">
+          </div>
+        </div>
+
+        <button class="button button-light swap-button" id="swap-button" type="button" aria-label="Swap text and background">Swap</button>
+
+        <div class="contrast-field">
+          <label class="field-label" for="bg-hex">Background color</label>
+          <div class="color-field">
+            <input class="text-input hex-input" id="bg-hex" type="text" maxlength="7" spellcheck="false">
+            <input id="bg-picker" type="color" aria-label="Pick the background color">
+          </div>
+        </div>
+
+        <div class="palette-picks">
+          <p class="field-label">From my palette: text</p>
+          <div class="pick-row" id="pick-text"></div>
+          <p class="field-label">From my palette: background</p>
+          <div class="pick-row" id="pick-bg"></div>
+        </div>
+      </section>
+
+      <!-- Result -->
+      <section class="contrast-result">
+        <div class="contrast-preview" id="contrast-preview">
+          <p class="preview-kicker">Preview</p>
+          <h2 class="preview-heading">Big headings are easier</h2>
+          <p class="preview-text">Normal paragraph text is harder to read, so it needs more contrast. If you have to squint, your users will too.</p>
+          <span class="preview-button" id="preview-button">A Button</span>
+        </div>
+
+        <div class="card ratio-card">
+          <div class="ratio-top">
+            <p class="ratio-number" id="ratio-number"></p>
+            <p class="ratio-word" id="ratio-word"></p>
+          </div>
+          <div class="grade-grid" id="grade-grid"></div>
+          <button class="button fix-button" id="fix-button" type="button">Fix it for me</button>
+          <p class="fix-note" id="fix-note" aria-live="polite"></p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Rules -->
+    <section class="section">
+      <h2 class="section-title">What the Grades Mean</h2>
+      <div class="rule-grid">
+        <div class="card">
+          <h3 class="card-title">AA (the goal)</h3>
+          <p class="card-text">The standard most websites must meet. Normal text needs <strong>4.5 : 1</strong>. Big text (about 24px, or 19px bold) needs <strong>3 : 1</strong>.</p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">AAA (extra credit)</h3>
+          <p class="card-text">Even easier to read. Normal text needs <strong>7 : 1</strong>. Big text needs <strong>4.5 : 1</strong>.</p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">Why it matters</h3>
+          <p class="card-text">Low vision, old screens, phones outside in the sun. Good contrast helps everyone, not just some people.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../../shared/js/color.js"></script>
+  <script src="../../shared/js/palette.js"></script>
+  <script src="../../shared/js/navbar.js"></script>
+  <script src="./contrast.js"></script>
+</body>
+</html>

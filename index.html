@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Lab | West-MEC Coding</title>
+  <link rel="stylesheet" href="./shared/css/global.css">
+  <link rel="stylesheet" href="./homepage.css">
+</head>
+<body data-root="./" data-page="home">
+
+  <header class="site-top" id="site-header"></header>
+
+  <main class="page">
+
+    <!-- Intro -->
+    <section class="home-hero">
+      <div class="home-hero-text">
+        <p class="kicker">West-MEC Coding Year 1</p>
+        <h1 class="home-title">Color Lab</h1>
+        <p class="page-intro">Learn why some colors work together and others clash, build your own palettes, and make sure people can actually read your website.</p>
+        <div class="home-buttons">
+          <a class="button" href="./pages/basics/">Start with the basics</a>
+          <a class="button button-light" href="./pages/generator/">Make a palette</a>
+        </div>
+      </div>
+      <div class="home-palette-card">
+        <p class="field-label">Your palette right now</p>
+        <div class="home-palette" id="home-palette"></div>
+        <p class="home-palette-note">Every tool uses this palette. Click a color to copy it.</p>
+      </div>
+    </section>
+
+    <!-- Tools -->
+    <section class="section">
+      <h2 class="section-title">Tools</h2>
+      <p class="section-text">Work through them in order the first time. After that, jump to whatever you need.</p>
+      <div class="tool-grid" id="tool-grid"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-bottom">
+    <p>West-MEC Coding Year 1. Inspired by coolors.co. Contrast grades follow WCAG 2.</p>
+  </footer>
+
+  <script src="./shared/js/color.js"></script>
+  <script src="./shared/js/palette.js"></script>
+  <script src="./shared/js/navbar.js"></script>
+  <script src="./homepage.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+/* Home page */
+
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+  padding: 1rem 0 1.5rem;
+}
+
+.home-title {
+  margin: 0.2rem 0 0.6rem;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.home-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+}
+
+.home-palette-card {
+  padding: 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.home-palette {
+  display: flex;
+  height: 14rem;
+  overflow: hidden;
+  border-radius: var(--radius-small);
+}
+
+.home-palette .swatch {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.8rem;
+  font-size: 0.8rem;
+}
+
+.home-palette-note {
+  margin: 0.6rem 0 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* Tool cards */
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 1rem;
+}
+
+.tool-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-decoration: none;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tool-card:hover,
+.tool-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 2px var(--ink), var(--shadow);
+}
+
+.tool-strip {
+  display: flex;
+  height: 3.5rem;
+}
+
+.tool-strip span {
+  flex: 1;
+}
+
+.tool-body {
+  padding: 1rem 1.2rem 1.2rem;
+}
+
+.tool-step {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tool-name {
+  margin: 0.15rem 0 0.3rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.tool-text {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 899px) {
+  .home-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-palette {
+    height: 9rem;
+  }
+}

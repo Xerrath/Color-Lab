@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Basics | Color Lab</title>
+  <link rel="stylesheet" href="../../shared/css/global.css">
+  <link rel="stylesheet" href="./basics.css">
+</head>
+<body data-root="../../" data-page="basics">
+
+  <header class="site-top" id="site-header"></header>
+
+  <main class="page">
+
+    <div class="page-head">
+      <p class="kicker">Start Here</p>
+      <h1 class="page-title">Color Basics</h1>
+      <p class="page-intro">Everything else in Color Lab builds on these ideas. Play with each one before moving on.</p>
+    </div>
+
+    <!-- Screens Mix Light -->
+    <section class="section">
+      <h2 class="section-title">1. Screens Mix Light</h2>
+      <p class="section-text">Every pixel on a screen is three tiny lights: <strong>red, green, and blue</strong>. Mixing light is different from mixing paint. The more light you add, the <strong>brighter</strong> it gets.</p>
+      <div class="card light-card">
+        <div class="mix-stage mix-light" aria-hidden="true">
+          <span class="mix-circle mix-red"></span>
+          <span class="mix-circle mix-green"></span>
+          <span class="mix-circle mix-blue"></span>
+        </div>
+        <div>
+          <h3 class="card-title">Red, Green, Blue (RGB)</h3>
+          <ul class="light-list">
+            <li>Red + green = <strong>yellow</strong></li>
+            <li>Green + blue = <strong>cyan</strong></li>
+            <li>Red + blue = <strong>magenta</strong></li>
+            <li>All three at full power = <strong>white</strong></li>
+            <li>All three turned off = <strong>black</strong></li>
+          </ul>
+          <p class="card-text">That is why every color in CSS is really just three numbers: how much red, how much green, and how much blue.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RGB Builder -->
+    <section class="section">
+      <h2 class="section-title">2. Build Any Color: rgb(), rgba(), and Hex</h2>
+      <p class="section-text">Each light goes from <strong>0</strong> (off) to <strong>255</strong> (full power). Slide them and watch the same color get written three ways. Alpha is <strong>see-through</strong>: 1 is solid, 0 is invisible.</p>
+      <div class="rgb-layout">
+        <div class="card rgb-sliders">
+          <div class="rgb-slider-row">
+            <label class="field-label" for="red-slider">Red: <span id="red-value"></span></label>
+            <input class="range-input channel-red" id="red-slider" type="range" min="0" max="255" value="42">
+          </div>
+          <div class="rgb-slider-row">
+            <label class="field-label" for="green-slider">Green: <span id="green-value"></span></label>
+            <input class="range-input channel-green" id="green-slider" type="range" min="0" max="255" value="157">
+          </div>
+          <div class="rgb-slider-row">
+            <label class="field-label" for="blue-slider">Blue: <span id="blue-value"></span></label>
+            <input class="range-input channel-blue" id="blue-slider" type="range" min="0" max="255" value="143">
+          </div>
+          <div class="rgb-slider-row">
+            <label class="field-label" for="alpha-slider">Alpha (see-through): <span id="alpha-value"></span></label>
+            <input class="range-input" id="alpha-slider" type="range" min="0" max="100" value="100">
+          </div>
+          <p class="field-label preset-label">Try these</p>
+          <div class="preset-row" id="preset-row"></div>
+          <div class="hex-reader">
+            <p class="field-label">How to read a hex code</p>
+            <p class="slider-help">Hex is just RGB written in base 16 (0 to 9, then A to F). Two characters for each light:</p>
+            <div class="hex-pairs" id="hex-pairs"></div>
+          </div>
+        </div>
+        <div class="rgb-result">
+          <div class="checker">
+            <div class="rgb-swatch" id="rgb-swatch">
+              <button class="rgb-code" id="code-hex" type="button" title="Click to copy"></button>
+              <button class="rgb-code rgb-code-small" id="code-rgb" type="button" title="Click to copy"></button>
+              <button class="rgb-code rgb-code-small" id="code-rgba" type="button" title="Click to copy"></button>
+              <button class="rgb-code rgb-code-small" id="code-hex-alpha" type="button" title="Click to copy"></button>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Tints, Shades, and Tones</h3>
+            <p class="card-text"><strong>Tint</strong> = add white. <strong>Shade</strong> = add black. <strong>Tone</strong> = add gray. Click any one to copy its hex.</p>
+            <p class="field-label">Tints</p>
+            <div class="swatch-row" id="tint-row"></div>
+            <p class="field-label row-gap">Shades</p>
+            <div class="swatch-row" id="shade-row"></div>
+            <p class="field-label row-gap">Tones</p>
+            <div class="swatch-row" id="tone-row"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Artist Wheel -->
+    <section class="section">
+      <h2 class="section-title">3. The Artist's Color Wheel</h2>
+      <p class="section-text">Art class uses a red, yellow, blue wheel with 12 colors. Every color family has a name, and the relationships on this wheel work the same way on a screen.</p>
+      <div class="artist-layout">
+        <div class="card artist-card">
+          <svg class="artist-wheel" id="artist-wheel" viewBox="-160 -160 320 320" role="img" aria-label="12 part artist color wheel"></svg>
+        </div>
+        <div class="card">
+          <div class="type-buttons" id="type-buttons" role="group" aria-label="Highlight a color group">
+            <button class="type-button" type="button" data-type="all" aria-pressed="true">All 12</button>
+            <button class="type-button" type="button" data-type="primary" aria-pressed="false">Primary</button>
+            <button class="type-button" type="button" data-type="secondary" aria-pressed="false">Secondary</button>
+            <button class="type-button" type="button" data-type="tertiary" aria-pressed="false">Tertiary</button>
+          </div>
+          <h3 class="card-title" id="type-title"></h3>
+          <p class="card-text" id="type-text"></p>
+          <p class="artist-picked" id="artist-picked">Click a slice of the wheel to see its name.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Warm and Cool -->
+    <section class="section">
+      <h2 class="section-title">4. Warm and Cool</h2>
+      <p class="section-text">Split the wheel in half. Warm colors feel close, active, and exciting. Cool colors feel far away, calm, and relaxing. Most good palettes use mostly one side, with a little of the other side as an accent.</p>
+      <div class="temp-grid">
+        <div class="card">
+          <h3 class="card-title">Warm</h3>
+          <div class="swatch-row temp-row" id="warm-row"></div>
+          <p class="card-text temp-words">Energy, excitement, happiness, hunger, danger</p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">Cool</h3>
+          <div class="swatch-row temp-row" id="cool-row"></div>
+          <p class="card-text temp-words">Calm, trust, nature, cleanliness, sadness</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meaning -->
+    <section class="section">
+      <h2 class="section-title">5. What Colors Make People Feel</h2>
+      <p class="section-text">Colors send a message before anyone reads a word. These meanings are common in the United States, but they change from culture to culture. White is for weddings in some places and for funerals in others.</p>
+      <div class="meaning-grid" id="meaning-grid"></div>
+    </section>
+
+    <!-- Next -->
+    <section class="section">
+      <div class="card next-card">
+        <h2 class="card-title">Ready to use it?</h2>
+        <p class="card-text">Find colors that go together on the <a href="../wheel/">Color Wheel</a>, make a palette in the <a href="../generator/">Generator</a>, then try it on a real page in the <a href="../visualizer/">Visualizer</a>.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../../shared/js/color.js"></script>
+  <script src="../../shared/js/palette.js"></script>
+  <script src="../../shared/js/navbar.js"></script>
+  <script src="./basics.js"></script>
+</body>
+</html>

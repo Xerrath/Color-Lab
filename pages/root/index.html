@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Root Builder | Color Lab</title>
+  <link rel="stylesheet" href="../../shared/css/global.css">
+  <link rel="stylesheet" href="./root.css">
+</head>
+<body data-root="../../" data-page="root">
+
+  <header class="site-top" id="site-header"></header>
+
+  <main class="page">
+
+    <div class="page-head">
+      <p class="kicker">Tribute Website</p>
+      <h1 class="page-title">Root Builder</h1>
+      <p class="page-intro">Build your 5-color palette one role at a time, check that the text is readable, then copy your <code class="inline-code">:root</code> variables straight into your CSS.</p>
+    </div>
+
+    <div class="root-layout">
+
+      <!-- Pick the roles -->
+      <section class="root-steps" id="root-steps" aria-label="Pick your colors"></section>
+
+      <!-- Results -->
+      <section class="root-results">
+
+        <div class="card">
+          <div class="code-head">
+            <h2 class="card-title">Your :root variables</h2>
+            <button class="button" id="copy-code" type="button">Copy CSS</button>
+          </div>
+          <pre class="root-code" id="root-code"></pre>
+          <div class="root-actions">
+            <button class="button button-light" id="save-palette" type="button">Save as my palette</button>
+            <a class="button button-light" href="../contrast/">Open Contrast Checker</a>
+          </div>
+        </div>
+
+        <!-- Mini tribute page that uses the variables -->
+        <div class="preview" id="preview" aria-label="Preview of a tribute page with your colors">
+          <div class="preview-header">
+            <p class="preview-kicker">A Tribute</p>
+            <p class="preview-title">Their Name Here</p>
+            <p class="preview-nav"><span>Story</span><span>Timeline</span><span>Legacy</span></p>
+          </div>
+          <div class="preview-body">
+            <div class="preview-story">
+              <span class="preview-portrait" aria-hidden="true">Aa</span>
+              <div>
+                <p class="preview-heading">Their Story</p>
+                <p class="preview-text">Body text uses the primary color on the extra color background.</p>
+                <span class="preview-button">A Button</span>
+              </div>
+            </div>
+            <p class="preview-quote">"A favorite quote sits on the secondary color."</p>
+            <p class="preview-year"><span>1969</span> Timeline years use the triadic color.</p>
+          </div>
+          <div class="preview-footer">Footer uses the primary color again</div>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Can people read it?</h2>
+          <p class="card-text">Each pair below shows up as text on your page. Aim for <strong>4.5 : 1</strong> or higher. If one fails, use the lighter / darker buttons on that color.</p>
+          <ul class="check-list" id="check-list"></ul>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <script src="../../shared/js/color.js"></script>
+  <script src="../../shared/js/palette.js"></script>
+  <script src="../../shared/js/navbar.js"></script>
+  <script src="./root.js"></script>
+</body>
+</html>

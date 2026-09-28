@@ -1,0 +1,354 @@
+/* Color Basics page */
+
+/* 1. Screens mix light */
+.light-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.mix-stage {
+  position: relative;
+  height: 15rem;
+  overflow: hidden;
+  border-radius: var(--radius-small);
+  isolation: isolate;
+}
+
+.mix-light {
+  background: #000000;
+}
+
+.mix-circle {
+  position: absolute;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+}
+
+.mix-red {
+  top: 1rem;
+  left: calc(50% - 7.5rem);
+  background: #ff0000;
+}
+
+.mix-green {
+  top: 1rem;
+  left: calc(50% - 1.5rem);
+  background: #00ff00;
+}
+
+.mix-blue {
+  top: 5.5rem;
+  left: calc(50% - 4.5rem);
+  background: #0000ff;
+}
+
+.light-list {
+  margin: 0 0 0.8rem;
+  padding-left: 1.2rem;
+  line-height: 1.8;
+}
+
+/* 2. RGB builder */
+.rgb-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.rgb-slider-row {
+  margin-bottom: 0.9rem;
+}
+
+.channel-red {
+  accent-color: #e63946;
+}
+
+.channel-green {
+  accent-color: #2a9d4f;
+}
+
+.channel-blue {
+  accent-color: #2e5fb8;
+}
+
+.preset-label {
+  margin-top: 0.4rem;
+}
+
+.preset-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.preset-button {
+  padding: 0.35rem 0.7rem;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.preset-button:hover {
+  box-shadow: 0 0 0 2px var(--ink);
+}
+
+.slider-help {
+  margin: 0.2rem 0 0;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.hex-reader {
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.hex-pairs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+}
+
+.hex-hash {
+  align-self: flex-start;
+  padding-top: 0.25rem;
+  font-family: var(--font-code);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.hex-pair {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 5.5rem;
+  padding: 0.3rem 0.6rem 0.5rem;
+  border-top: 4px solid;
+  border-radius: 0.3rem;
+  background: var(--page-bg);
+}
+
+.hex-pair-code {
+  font-family: var(--font-code);
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.hex-pair-meaning {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.rgb-result {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Checkerboard behind the swatch so see-through colors are easy to spot */
+.checker {
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(45deg, #d9dce3 25%, transparent 25%),
+    linear-gradient(-45deg, #d9dce3 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #d9dce3 75%),
+    linear-gradient(-45deg, transparent 75%, #d9dce3 75%);
+  background-size: 24px 24px;
+  background-position: 0 0, 0 12px, 12px -12px, -12px 0;
+}
+
+.rgb-swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  min-height: 13rem;
+  padding: 1.3rem;
+}
+
+.rgb-code {
+  padding: 0.3rem 0.6rem;
+  font-family: var(--font-code);
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  font-weight: 700;
+  color: inherit;
+  background: rgba(127, 127, 127, 0.2);
+  border: 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.rgb-code-small {
+  font-size: 1rem;
+}
+
+.row-gap {
+  margin-top: 0.8rem;
+}
+
+/* 3. Artist wheel */
+.artist-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.artist-card {
+  display: grid;
+  place-items: center;
+}
+
+.artist-wheel {
+  width: 100%;
+  max-width: 24rem;
+}
+
+.artist-slice {
+  cursor: pointer;
+  stroke: #ffffff;
+  stroke-width: 2;
+  transition: opacity 0.2s ease;
+}
+
+.artist-slice:hover {
+  opacity: 0.85;
+}
+
+.artist-slice.is-dim {
+  opacity: 0.12;
+}
+
+.artist-label {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 800;
+  pointer-events: none;
+}
+
+.type-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.type-button {
+  padding: 0.4rem 0.85rem;
+  font: inherit;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.type-button:hover {
+  border-color: var(--ink);
+}
+
+.type-button[aria-pressed="true"] {
+  color: #ffffff;
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.artist-picked {
+  margin: 0;
+  padding: 0.8rem 1rem;
+  font-weight: 700;
+  background: var(--page-bg);
+  border-radius: var(--radius-small);
+}
+
+/* 4. Warm and cool */
+.temp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1rem;
+}
+
+.temp-row .swatch {
+  min-height: 4rem;
+}
+
+.temp-words {
+  margin: 0.8rem 0 0;
+  font-weight: 600;
+}
+
+/* 5. Meaning */
+.meaning-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  gap: 0.9rem;
+}
+
+.meaning-card {
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.meaning-color {
+  height: 5rem;
+}
+
+.meaning-body {
+  padding: 0.9rem 1rem 1rem;
+}
+
+.meaning-name {
+  margin: 0 0 0.2rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.meaning-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.next-card {
+  background: var(--ink);
+  color: #ffffff;
+  border-color: var(--ink);
+}
+
+.next-card .card-text {
+  margin: 0;
+  color: #d9dce3;
+}
+
+.next-card a {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+@media (max-width: 899px) {
+  .light-card,
+  .rgb-layout,
+  .artist-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
